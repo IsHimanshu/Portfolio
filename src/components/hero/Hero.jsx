@@ -41,7 +41,7 @@ const Hero = () => {
               // data-aos="fade-up"
               className=" text-[1.1rem] font-medium w-3/4 md:w-full text-gray-600 sm:text-[.95rem]"
             >
-              Lorem ipsum dolor sit amet consectetur
+                            A lifelong technology enthusiast with a deep fascination for AI/ML. Honed skills in machine learning, deep learning, computer vision, and NLP through academic specialization. Passionate about exploring cutting-edge technologies like generative AI and large language models. Eager to leverage strong problem-solving abilities and continuous learning mindset to develop groundbreaking AI/ML solutions that drive positive change.
             </p>
           </div>
           <div data-aos="fade-up" className="buttons flex gap-5">
