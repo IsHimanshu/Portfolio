@@ -1,83 +1,129 @@
-import React from "react";
-import { BsArrowRight } from "react-icons/bs";
-import { RiSendPlaneFill } from "react-icons/ri";
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import styled from 'styled-components';
+import { BsArrowRight } from 'react-icons/bs';
+import { RiSendPlaneFill } from 'react-icons/ri';
+import emailjs from 'emailjs-com';
+
+const ContactContainer = styled.div`
+  /* Container styles */
+`;
+
+const FormContainer = styled.form`
+  /* Form styles */
+`;
+
+const Input = styled.input`
+  /* Input styles */
+`;
+
+const Textarea = styled.textarea`
+  /* Textarea styles */
+`;
+
+const SubmitButton = styled.button`
+  /* Submit button styles */
+`;
+
+const SuccessMessage = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4bb543;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  opacity: ${({ show }) => (show ? 1 : 0)};
+  transition: opacity 0.3s ease-in-out;
+`;
 
 const Contact = () => {
-  return (
-    <div id="contact" className="container m-auto mt-16">
-      {/* heading */}
-      <div 
-      // data-aos="fade-up"
-       className="relative mb-5">
-        <h3 className=" text-3xl font-black text-gray-400 sm:text-2xl">
-          Contact
-        </h3>
-        <span className="h-[1.1px] right-0 absolute w-[92%] bg-gray-300 block"></span>
-      </div>
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-      {/* card*/}
+  const onSubmit = (data) => {
+    const serviceId = 'your_service_id';
+    const templateId = 'your_template_id';
+    const userId = 'your_user_id';
+
+    emailjs
+      .send(serviceId, templateId, data, userId)
+      .then(
+        (result) => {
+          // Show success message
+          setShowSuccessMessage(true);
+          setTimeout(() => {
+            setShowSuccessMessage(false);
+          }, 3000); // Hide the message after 3 seconds
+          reset(); // Reset the form
+        },
+        (error) => {
+          // Handle error
+          console.error('Error sending email:', error.text);
+        }
+      );
+  };
+
+  return (
+    <ContactContainer id="contact" className="container m-auto mt-16">
+      {/* Heading */}
+      {/* ... */}
+
+      {/* Card */}
       <div className="card-wrapper w-[90%] sm:w-[100%] mx-auto mt-5 flex items-center justify-center sm:flex-col">
         <div className="left w-[70%] flex-1 flex items-center justify-center sm:flex-col sm:w-full">
-          <div className="flex-3 w-1/2 gap-3 flex items-end justify-end  flex-col sm:w-3/4">
-            <div 
-            data-aos="zoom-in"
-            >
-              <h1 className="text-5xl font-bold sm:text-3xl">You Need</h1>
-              <h3 className="text-xl sm:text-lg">
-               Any Machine learning model,leave request 
-              </h3>
-            </div>
-          </div>
-          <div className=" flex p-5 items-center justify-center ">
-            <button
-              
-              data-aos="zoom-in"
-              
-              className= " text-yellow-500 font-extrabold text-3xl p-2 rounded-lg shadow-[0_0_10px_1px_rgba(0,0,0,0.1)] "
-            >
-              <BsArrowRight className=" md:rotate-90" />
-            </button>
-          </div>
+          {/* Left section */}
+          {/* ... */}
         </div>
         <div className="right flex-1">
-          <form
-            
+          <FormContainer
             data-aos="zoom-in"
-            
             className="flex justify-center items-center flex-col gap-5 w-[70%] md:w-[100%] sm:w-[95%] mx-auto"
-            action="mailto:himanshus4965@gmail.com"
+            onSubmit={handleSubmit(onSubmit)}
           >
-            <input
+            <Input
               className="px-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] p-2 rounded-lg w-full"
               type="email"
               placeholder="e.g. example@email.com"
-              name=""
+              {...register('email', { required: 'Email is required' })}
             />
-            <input
+            {errors.email && <span>{errors.email.message}</span>}
+
+            <Input
               className="px-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] p-2 rounded-lg w-full"
               type="text"
               placeholder="Your Name"
-              name=""
+              {...register('name', { required: 'Name is required' })}
             />
-            <textarea
+            {errors.name && <span>{errors.name.message}</span>}
+
+            <Textarea
               className="px-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] p-2 rounded-lg w-full"
               rows="4"
-              cols="50"
               placeholder="Write your message"
-              name=""
-              id=""
+              {...register('message', { required: 'Message is required' })}
             />
-            <button
-              className="bg-yellow-500 w-full text-white font-semibold  p-2 rounded-lg flex items-center justify-center space-x-1"
+            {errors.message && <span>{errors.message.message}</span>}
+
+            <SubmitButton
+              className="bg-yellow-500 w-full text-white font-semibold p-2 rounded-lg flex items-center justify-center space-x-1"
               type="submit"
             >
               <span>Send</span>
-              <RiSendPlaneFill/>
-            </button>
-          </form>
+              <RiSendPlaneFill />
+            </SubmitButton>
+          </FormContainer>
         </div>
       </div>
-    </div>
+
+      {/* Success message */}
+      <SuccessMessage show={showSuccessMessage}>
+        <p>Message sent successfully!</p>
+      </SuccessMessage>
+    </ContactContainer>
   );
 };
 
