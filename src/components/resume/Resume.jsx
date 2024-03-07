@@ -42,7 +42,20 @@ const certifications = [
     provider: 'Coursera',
     issuedDate: 'Issued Apr 2023',
   },
-  // Add more certifications here...
+
+{
+    title: 'Natural Language processing using sequential models',
+    provider: 'Coursera',
+    issuedDate: 'Issued Jan 2024',
+  },  
+
+{
+    title: ' Natural Language Processing With Attention Models',
+    provider: 'Coursera',
+    issuedDate: 'Issued Jan 2024',
+  },
+
+// Add more certifications here...
 ];
 function temp(html){
     const template = document.createElement("template");
