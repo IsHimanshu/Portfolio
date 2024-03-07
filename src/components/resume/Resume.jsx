@@ -1,4 +1,4 @@
-import React from "react";
+importunity React from "react";
 import { useState } from 'react';
 
 const certifications = [
@@ -151,9 +151,7 @@ const Resume = () => {
                   Year 2020 - Year 2024
                 </span>
                 <p className=" text-[.9rem] text-justify text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Excepturi nihil aut quae obcaecati alias placeat totam aperiam
-                  pariatur quam? 
+                Gained expertise in programming languages like Python, Java, and frameworks such as TensorFlow through a rigorous curriculum. Developed strong skills in data engineering, visualization, and natural language processing. Participated in AI/ML projects and competitions to apply theoretical concepts practically. Demonstrated commitment to continuous learning through industry-recognized certifications in AI/ML domains.
                 </p>
               </div>
             </div>
