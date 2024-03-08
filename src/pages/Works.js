@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import WorkCard from "../../chip/WorkCard";
-import Navbar from "../components/Navbar";
-import Footer from "../components/footer"; 
+import Footer from "../components/footer/Footer";
+import Hero from "../components/hero/Hero";
+import NavBar from "../components/navbar/NavBar";
 import data from "../data/data";
 
 const Works = () => {
