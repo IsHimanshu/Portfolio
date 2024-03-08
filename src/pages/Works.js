@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import WorkCard from "../../chip/WorkCard";
-import Navbar from "../Navbar"; // Replace with your Navbar component path
-import Footer from "../Footer"; // Replace with your Footer component path
-import data from "../data/data.js"; // Import project data
+import Navbar from "../components/Navbar";
+import Footer from "../components/footer"; 
+import data from "../data/data";
 
 const Works = () => {
   const projects = data;
