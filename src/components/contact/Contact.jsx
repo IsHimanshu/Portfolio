@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import { BsArrowRight } from 'react-icons/bs';
 import { RiSendPlaneFill } from 'react-icons/ri';
-import emailjs from 'emailjs-com';
+//import emailjs from 'emailjs-com';
 
 const ContactContainer = styled.div`
   /* Container styles */
