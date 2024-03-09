@@ -5,12 +5,7 @@ import { RxExternalLink } from "react-icons/rx";
 import { AiOutlineGithub } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-const WorkCard = () => {
-  const reversedData = [...data].reverse().slice(0,3);
-
-  return (
-    <>
-      {reversedData.map((data) => {
+const WorkCard = ({data}) => {
         return (
           <div
             data-aos="zoom-in"
@@ -58,14 +53,7 @@ const WorkCard = () => {
             </p>
           </div>
         );
-      })}
-<Link to="/works" className="mt-8 text-center">
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75">
-          See All Works
-        </button>
-      </Link>
-    </>
-  );
+      })}
 };
 
 export default WorkCard;
