@@ -1,7 +1,10 @@
 import React from "react";
 import WorkCard from "../../chip/WorkCard";
+import data from "../../data/data";
+
 
 const Work = () => {
+const reversedData = [...data].reverse().slice(0, 3);
   return (
     <div id="works" className="container m-auto mt-16">
       {/* heading */}
@@ -21,7 +24,9 @@ const Work = () => {
       {/* card */}
       <div className="card-wrapper mx-auto w-[90%] sm:w-fit mt-5">
         <div className="card-box grid grid-cols-3 space-y-5 space-x-5 w-full md:grid-cols-2 sm:gap-8 sm:grid-cols-1 sm:space-y-0 ">
-          <WorkCard />
+          {reversedData.map((item) => (
+        <WorkCard key={item.id} item={item} /> // Call WorkCard with each project's data
+      ))}
         </div>
       </div>
     </div>
