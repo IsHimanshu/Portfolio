@@ -1,7 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { Suspense } from "react";
-import { BarLoader } from "react-spinners";
-import Home from "./pages/Home";
+import React, { lazy, Suspense, useState, useEffect } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BarLoader } from 'react-spinners';
+
+const Home = lazy(() => import('./pages/Home'));
+const Works = lazy(() => import('./pages/Works'));
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+  },
+  {
+    path: '/Works',
+    element: <Works />,
+  },
+]);
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -10,6 +23,7 @@ const App = () => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1000);
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -26,7 +40,7 @@ const App = () => {
           <BarLoader color="#f6c400" height={4} />
         </div>
       ) : (
-        <Home />
+        <RouterProvider router={router} />
       )}
     </Suspense>
   );
