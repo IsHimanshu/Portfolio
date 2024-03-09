@@ -30,6 +30,11 @@ const reversedData = [...data].reverse().slice(0, 3);
         </div>
       </div>
     </div>
+    <div className="text-center mt-8">
+          <Link to="/Works" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75">
+            See All Works
+          </Link>
+        </div>
   );
 };
 
