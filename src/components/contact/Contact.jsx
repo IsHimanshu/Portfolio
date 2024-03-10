@@ -45,9 +45,9 @@ const Contact = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const onSubmit = (data) => {
-    const serviceId = 'your_service_id';
-    const templateId = 'your_template_id';
-    const userId = 'your_user_id';
+    const serviceId = process.env.REACT_APP_EMAILS;
+    const templateId = process.env.REACT_APP_TEMPLATE;
+    const userId = process.env.REACT_APP_EMAILID;
 
     emailjs
       .send(serviceId, templateId, data, userId)
