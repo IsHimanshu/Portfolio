@@ -47,7 +47,7 @@ const Contact = () => {
   const onSubmit = (data) => {
     const serviceId = process.env.REACT_APP_EMAILS;
     const templateId = process.env.REACT_APP_TEMPLATE;
-    const userId = process.env.REACT_APP_EMAILID;
+    const userId = process.env.VITE_VERCEL_ENV_EMAILID;
     console.log(userId);
     emailjs
       .send(serviceId, templateId, data, userId)
