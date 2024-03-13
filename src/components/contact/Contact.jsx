@@ -48,7 +48,7 @@ const Contact = () => {
     const serviceId = process.env.REACT_APP_EMAILS;
     const templateId = process.env.REACT_APP_TEMPLATE;
     const userId = process.env.REACT_APP_EMAILID;
-
+    console.log(userId);
     emailjs
       .send(serviceId, templateId, data, userId)
       .then(
