@@ -45,8 +45,8 @@ const Contact = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const onSubmit = (data) => {
-    const serviceId = process.env.REACT_APP_EMAILS;
-    const templateId = process.env.REACT_APP_TEMPLATE;
+    const serviceId = process.env.S_ID;
+    const templateId = process.env.T_ID;
     const userId = process.env.USER_ID;
     console.log(userId);
     emailjs
