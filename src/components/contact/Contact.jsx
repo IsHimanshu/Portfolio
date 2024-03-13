@@ -45,9 +45,9 @@ const Contact = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const onSubmit = (data) => {
-    const serviceId = process.env.S_ID;
-    const templateId = process.env.T_ID;
-    const userId = process.env.USER_ID;
+    const serviceId = process.env.VITE_S_ID;
+    const templateId = process.env.VITE_T_ID;
+    const userId = process.env.VITE_USER_ID;
     console.log(userId);
     emailjs
       .send(serviceId, templateId, data, userId)
