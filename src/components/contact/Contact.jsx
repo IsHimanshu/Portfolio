@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { BsArrowRight } from 'react-icons/bs';
 import { RiSendPlaneFill } from 'react-icons/ri';
 import emailjs from 'emailjs-com';
-import.meta.env;
+
 
 const ContactContainer = styled.div`
   /* Container styles */
@@ -46,9 +46,9 @@ const Contact = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const onSubmit = (data) => {
-    const serviceId = process.env.VITE_S_ID;
-    const templateId = process.env.VITE_T_ID;
-    const userId = process.env.VITE_USER_ID;
+    const serviceId = import.meta.env.VITE_S_ID;
+    const templateId = import.meta.env.VITE_T_ID;
+    const userId = import.meta.env.VITE_USER_ID;
     console.log(userId);
     emailjs
       .send(serviceId, templateId, data, userId)
