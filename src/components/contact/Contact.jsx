@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { BsArrowRight } from 'react-icons/bs';
 import { RiSendPlaneFill } from 'react-icons/ri';
 import emailjs from 'emailjs-com';
+import.meta.env;
 
 const ContactContainer = styled.div`
   /* Container styles */
