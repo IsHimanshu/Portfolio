@@ -50,6 +50,8 @@ const Contact = () => {
     const templateId = import.meta.env.VITE_T_ID;
     const userId = import.meta.env.VITE_USER_ID;
     console.log(userId);
+    console.log(templateId);
+    console.log(serviceId);
     emailjs
       .send(serviceId, templateId, data, userId)
       .then(
