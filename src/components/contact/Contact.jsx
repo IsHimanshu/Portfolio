@@ -46,7 +46,7 @@ const Contact = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const onSubmit = (data) => {
-    const serviceId = import.meta.env.VITE_S_ID;
+    const serviceId = import.meta.env.VITE_S_KEY;
     const templateId = import.meta.env.VITE_T_ID;
     const userId = import.meta.env.VITE_USER_ID;
     console.log(userId);
@@ -73,14 +73,36 @@ const Contact = () => {
   return (
     <ContactContainer id="contact" className="container m-auto mt-16">
       {/* Heading */}
-      {/* ... */}
+      <div className="text-center">
+        <h2 className="text-4xl font-bold">Contact Me</h2>
+        <p className="text-gray-600 mt-2">Get in touch with me for any questions or opportunities</p>
+      </div>
 
       {/* Card */}
       <div className="card-wrapper w-[90%] sm:w-[100%] mx-auto mt-5 flex items-center justify-center sm:flex-col">
         <div className="left w-[70%] flex-1 flex items-center justify-center sm:flex-col sm:w-full">
           {/* Left section */}
-          {/* ... */}
+          <div className="flex flex-col gap-5">
+            <h3 className="text-2xl font-semibold">Let's connect</h3>
+            <p className="text-gray-600">
+              I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+            </p>
+            <div className="flex items-center gap-2">
+              <BsArrowRight className="text-yellow-500" />
+              <p>himanshu-srivastava@outlook.com</p>
+            </div>
+          </div>
         </div>
+        <div className="right flex-1">
+          <FormContainer
+            data-aos="zoom-in"
+            className="flex justify-center items-center flex-col gap-5 w-[70%] md:w-[100%] sm:w-[95%] mx-auto"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            {/* ... (form inputs remain unchanged) */}
+          </FormContainer>
+        </div>
+      </div>
         <div className="right flex-1">
           <FormContainer
             data-aos="zoom-in"
