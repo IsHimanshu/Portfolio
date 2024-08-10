@@ -46,7 +46,7 @@ const Hero = () => {
           </div>
           <div data-aos="fade-up" className="buttons flex gap-5">
             <a
-              href=""
+              href="#contact"
               className=" bg-black text-[1rem] text-white px-10 py-2 sm:px-8 rounded-lg font-bold  hover:text-yellow-500"
             >
               <span> Hire Me</span>
@@ -92,7 +92,7 @@ const Hero = () => {
                 </a>
               </li>
               <li>
-                <a href="https://twitter.com/HimanshuSr42922">
+                <a href="https://twitter.com/Sr4Himanshu">
                   {" "}
                   <AiFillTwitterCircle className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125  " />{" "}
                 </a>
